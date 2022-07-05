@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="heading">
+    <h1>
+      <span class="shopper"><img src="../../../assets/link-logo.png" class="logo" alt=""></span> Carrito de {{nombreUsuario}}
+    </h1>
+
+    <a href="#" class="visibility-cart transition is-open">X</a>
+  </div>
+
+  <div class="cart transition is-open">
+    <h3 *ngIf="!hayItems()" class="text-center">Aun no hay items cargados :c</h3>
+    <div *ngIf="hayItems()" class="table">
+
+      <div class="layout-inline row th">
+        <div class="col col-pro">Producto</div>
+        <div class="col col-price align-center ">
+          Precio por unidad
+        </div>
+        <div class="col col-qty align-center">Cantidad</div>
+        <div class="col">Total</div>
+      </div>
+      <div *ngFor="let itemCarrito of items" class="layout-inline row align-center">
+
+        <div class="col col-pro layout-inline">
+          <img src="{{itemCarrito.image}}" alt="producto" />
+          <h5>{{itemCarrito.nombre}}</h5>
+        </div>
+
+        <div class="col col-price col-numeric align-center bg2 ">
+          <p class="align-self-center">${{itemCarrito.precio}}</p>
+        </div>
+
+        <div class="col col-qty layout-inline">
+          <p>{{itemCarrito.cantidad}}</p>
+        </div>
+
+        <div class="col col-total col-numeric bg2">
+          <p class="align-self-center">${{itemCarrito.total}}</p>
+        </div>
+      </div>
+
+
+       <div class="tf">
+         <div class="row layout-inline">
+           <div class="col">
+             <p>VAT</p>
+           </div>
+           <div class="col"></div>
+         </div>
+         <div class="row layout-inline">
+           <div class="col">
+             <p>Subtotal</p>
+           </div>
+           <div class="col"></div>
+         </div>
+          <div class="row layout-inline">
+           <div class="col">
+             <p>Total</p>
+           </div>
+           <div class="col"></div>
+         </div>
+       </div>
+  </div>
+
+  <a *ngIf="hayItems()" class="btn btn-update" (click)="realizarCompra()">Comprar</a>
+
+</div>

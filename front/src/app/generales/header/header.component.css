@@ -1,0 +1,11 @@
+.logo{
+  width: 30px;
+  background-color: #212529;
+  margin-right: 10px;
+}
+.carritoBttn{
+  border-color: #212529;
+  box-shadow: none;
+  border-width: 0px;
+  padding-right: 20px;
+}

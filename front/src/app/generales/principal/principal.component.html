@@ -1,0 +1,52 @@
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Shopping link</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Primer accion</a>
+          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        <div *ngFor="let producto of productos" class="col">
+
+          <div class="card shadow-sm">
+
+            <div class="standard-card"><img class=" prueba" src="{{producto?.image}}" alt=""></div>
+            <div class="card-body">
+              <h3 class="card-text">{{producto?.nombre}}</h3>
+              <p class="card-text">{{producto?.descripcion}}</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <h4 class="card-text">${{producto?.precio}}</h4>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" (click)="verProducto(producto?.idProducto)">Ver</button>
+                  <button *ngIf="vista=='comprador'||vista==null" type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                  <button *ngIf="vista=='vendedor'" type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <div *ngIf="vista=='vendedor'" class="d-flex justify-content-center">
+      <button class="add-button">Agregar Producto</button>
+    </div>
+  </div>
+
+</main>

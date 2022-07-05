@@ -1,0 +1,36 @@
+<div *ngIf="meMuestro" class="bg-dark collapse" id="navbarHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-md-7 py-4">
+        <h4 class="text-white">Acerca de</h4>
+        <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+      </div>
+      <div class="col-sm-4 offset-md-1 py-4">
+        <h4 *ngIf="vista!=null" class="text-white">Hola, {{this.nombre}}</h4>
+        <h4 *ngIf="vista==null" class="text-white">Bienvenido/a</h4>
+        <ul class="list-unstyled">
+          <li><a *ngIf="vista==null" [routerLink]="['/login']" class="text-white">Ingresar</a></li>
+          <li><a href="#" class="text-white">Like on Facebook</a></li>
+          <li><a href="#" class="text-white">Email me</a></li>
+          <li><a *ngIf="vista!=null" (click)="salir()" class="text-white">Cerrar Sesion</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="meMuestro" class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a [routerLink]="['/inicio']" class="navbar-brand d-flex align-items-center">
+      <img src="../../../assets/link-logo.png" width="20" height="20"  alt="">
+      <strong>Shopping link</strong>
+    </a>
+    <div>
+      <button *ngIf="vista=='comprador'" class="bg-dark carritoBttn" (click)="verCarrito()">
+        <span class="text-white"><img class="logo" src="../../../assets/cart.png" alt="">Mi carrito</span>
+      </button>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<main class="form-signin w-100 m-auto text-center" >
+  <form [formGroup]="formulario!" (ngSubmit)="onSumbit()">
+    <img class="mb-4" src="../../../assets/link-logo.png" alt="" width="72" >
+    <h1 class="h3 mb-3 fw-normal">Ingresar Link Shopping</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="Ingresar Usuario" formControlName="usuario">
+      <label for="floatingInput">Ingresar Usuario</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" formControlName="contrasenia">
+      <label for="floatingPassword">Ingresar Contraseña</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Recordarme
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+    <p class="mt-5 mb-3 text-muted">© UTN | Red link - 2022</p>
+  </form>
+</main>
